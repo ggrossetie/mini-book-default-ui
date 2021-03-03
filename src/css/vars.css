@@ -58,6 +58,9 @@
   --toolbar-muted-color: var(--color-gray-30);
   --page-version-menu-background: var(--color-smoke-70);
   --page-version-missing-font-color: var(--color-gray-30);
+  /* brand */
+  --brand-primary-color: #00791d;
+  --brand-secondary-color: #0e5ef1;
   /* admonitions */
   --caution-color: #a0439c;
   --caution-on-color: var(--color-white);
