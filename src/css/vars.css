@@ -33,10 +33,10 @@
   --panel-border-color: var(--color-smoke-90);
   --scrollbar-thumb-color: var(--color-gray-10);
   /* navbar */
-  --navbar-background: var(--color-jet-80);
-  --navbar-font-color: var(--color-white);
-  --navbar_hover-background: var(--color-black);
-  --navbar-button-background: var(--color-white);
+  --navbar-background: var(--color-white);
+  --navbar-font-color: var(--color-jet-80);
+  --navbar_hover-background: var(--color-white);
+  --navbar-button-background: var(--color-black);
   --navbar-button-border-color: var(--panel-border-color);
   --navbar-button-font-color: var(--body-font-color);
   --navbar-menu-border-color: var(--panel-border-color);
