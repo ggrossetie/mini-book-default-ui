@@ -2,10 +2,14 @@
 {{#if (or page.previous page.next)}}
 <nav class="pagination">
   {{#with page.previous}}
+  {{#unless (eq page.attributes.pagination "next")}}
   <span class="prev"><a href="{{{relativize ./url}}}">{{{./content}}}</a></span>
+  {{/unless}}
   {{/with}}
   {{#with page.next}}
+  {{#unless (eq page.attributes.pagination "previous")}}
   <span class="next"><a href="{{{relativize ./url}}}">{{{./content}}}</a></span>
+  {{/unless}}
   {{/with}}
 </nav>
 {{/if}}
