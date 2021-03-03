@@ -36,6 +36,15 @@
   margin: 1.5rem 0;
 }
 
+.doc > h1.page:first-child::before {
+  display: block;
+  content: "";
+  width: 40px;
+  height: 3px;
+  background: var(--brand-primary-color);
+  margin-bottom: 0.5rem;
+}
+
 @media screen and (min-width: 769px) {
   .doc > h1.page:first-child {
     margin-top: 2.5rem;
