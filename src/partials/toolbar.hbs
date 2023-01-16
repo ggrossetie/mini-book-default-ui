@@ -1,12 +1,24 @@
 <div class="toolbar" role="navigation">
-{{> nav-toggle}}
+  {{> nav-toggle}}
   {{#with site.homeUrl}}
-  <a href="{{{relativize this}}}" class="home-link{{#if @root.page.home}} is-current{{/if}}"></a>
+    <a href="{{{relativize this}}}" class="home-link{{#if @root.page.home}} is-current{{/if}}"></a>
   {{/with}}
-{{> breadcrumbs}}
+  {{> breadcrumbs}}
+  {{#with (downloadable-assets)}}
+    {{#if this.length}}
+      <div class="downloadable-assets">
+        <span class="title">Download as</span>
+        <ul>
+          {{#each this}}
+            <li class="downloadable-asset"><a href="{{this.href}}" class="button">{{{resolve-asset-icon this}}}{{this.title}}</a></li>
+          {{/each}}
+        </ul>
+      </div>
+    {{/if}}
+  {{/with}}
   {{#if (and page.fileUri (not env.CI))}}
-  <div class="edit-this-page"><a href="{{page.fileUri}}">Edit this Page</a></div>
+    <div class="edit-this-page"><a href="{{page.fileUri}}">Edit this Page</a></div>
   {{else if (and page.editUrl (or env.FORCE_SHOW_EDIT_PAGE_LINK (not page.origin.private)))}}
-  <div class="edit-this-page"><a href="{{page.editUrl}}">Edit this Page</a></div>
+    <div class="edit-this-page"><a href="{{page.editUrl}}">Edit this Page</a></div>
   {{/if}}
 </div>

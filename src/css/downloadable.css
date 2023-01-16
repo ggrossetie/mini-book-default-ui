@@ -1,0 +1,30 @@
+.downloadable-assets {
+  display: flex;
+  align-items: center;
+  margin-right: 0.5rem;
+  color: var(--toolbar-muted-color);
+}
+
+.downloadable-assets > ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.5em;
+}
+
+.downloadable-assets .downloadable-asset {
+  font-size: 0.9em;
+}
+
+.downloadable-assets .downloadable-asset a {
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+}
+
+.downloadable-assets > .title {
+  font-weight: bold;
+  font-size: 0.9em;
+  padding-right: 0.75em;
+}
