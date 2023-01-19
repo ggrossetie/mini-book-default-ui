@@ -1,8 +1,9 @@
 .downloadable-assets {
   display: flex;
   align-items: center;
-  margin-right: 0.5rem;
   color: var(--toolbar-muted-color);
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 .downloadable-assets > ul {

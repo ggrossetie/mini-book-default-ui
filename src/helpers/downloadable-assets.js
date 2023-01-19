@@ -5,10 +5,6 @@ module.exports = ({ data: { root } }) => {
     return root.downloadableAssets
   }
   const { page, contentCatalog, siteRootPath } = root
-  if (!contentCatalog) {
-    // contentCatalog is undefined in preview/build
-    return []
-  }
   const keysValue = page && page.attributes && page.attributes['downloadable-asset-keys']
   if (!keysValue) {
     root.downloadableAssets = []
@@ -18,7 +14,7 @@ module.exports = ({ data: { root } }) => {
     .map((key) => key.trim())
     .map((key) => {
       const link = page.attributes[`downloadable-asset-${key}-link`]
-      const resource = contentCatalog.resolveResource(link, {
+      const resource = contentCatalog && contentCatalog.resolveResource(link, {
         component: page.component.name,
         version: page.version,
         module: page.module,
@@ -29,10 +25,11 @@ module.exports = ({ data: { root } }) => {
       } else {
         href = link
       }
+      const icon = page.attributes[`downloadable-asset-${key}-icon`] || 'download'
       return {
         title: page.attributes[`downloadable-asset-${key}-title`],
         href,
-        icon: 'file',
+        icon,
       }
     })
   root.downloadableAssets = result

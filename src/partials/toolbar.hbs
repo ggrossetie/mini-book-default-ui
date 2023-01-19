@@ -4,18 +4,7 @@
     <a href="{{{relativize this}}}" class="home-link{{#if @root.page.home}} is-current{{/if}}"></a>
   {{/with}}
   {{> breadcrumbs}}
-  {{#with (downloadable-assets)}}
-    {{#if this.length}}
-      <div class="downloadable-assets">
-        <span class="title">Download as</span>
-        <ul>
-          {{#each this}}
-            <li class="downloadable-asset"><a href="{{this.href}}" class="button">{{{resolve-asset-icon this}}}{{this.title}}</a></li>
-          {{/each}}
-        </ul>
-      </div>
-    {{/if}}
-  {{/with}}
+  {{> download-assets}}
   {{#if (and page.fileUri (not env.CI))}}
     <div class="edit-this-page"><a href="{{page.fileUri}}">Edit this Page</a></div>
   {{else if (and page.editUrl (or env.FORCE_SHOW_EDIT_PAGE_LINK (not page.origin.private)))}}
