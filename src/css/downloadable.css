@@ -14,6 +14,10 @@
   gap: 0.5em;
 }
 
+.downloadable-asset > svg {
+  height: 1rem;
+}
+
 .downloadable-assets .downloadable-asset {
   font-size: 0.9em;
 }
